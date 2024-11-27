@@ -68,11 +68,11 @@ export function loginPage(){
                                                 eventListener: [
                                                     {
                                                         event: 'focusin',
-                                                        callback: (event)=>{highlight(event.target)}
+                                                        callback: (event)=>{information(event.target)}
                                                     },
                                                     {
                                                         event: 'focusout',
-                                                        callback: (event)=>{clearHighlight(event.target)}
+                                                        callback: (event)=>{clearInformation(event.target)}
                                                     }
                                                 ]
                                             })
@@ -96,11 +96,11 @@ export function loginPage(){
                                                 eventListener: [
                                                     {
                                                         event: 'focusin',
-                                                        callback: (event)=>{highlight(event.target)}
+                                                        callback: (event)=>{information(event.target)}
                                                     },
                                                     {
                                                         event: 'focusout',
-                                                        callback: (event)=>{clearHighlight(event.target)}
+                                                        callback: (event)=>{clearInformation(event.target)}
                                                     }
                                                 ]
                                             }),
@@ -135,7 +135,7 @@ export function loginPage(){
                                 eventListener: [
                                     {
                                         event: 'click',
-                                        
+                                        callback: goToNextPage
                                     }
                                 ],
                                 children: 'Sign in'
@@ -148,7 +148,7 @@ export function loginPage(){
     })
 }
 
-function highlight(element){
+function information(element){
     
 
     element.parentElement.classList.add('outline');
@@ -163,7 +163,7 @@ function highlight(element){
     }
 }
 
-function clearHighlight(element){
+function clearInformation(element){
 
     let grayIcon;
     let blackIcon;

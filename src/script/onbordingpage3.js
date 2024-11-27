@@ -9,7 +9,7 @@ export function onbordPage3(){
         children: [
             El({
                 element: 'div',
-                className: 'top-img w-[428px] h-[602px] bg-[url(/src/assets/obsp2-img.png)] bg-no-repeat'
+                className: 'top-img w-[428px] h-[602px] bg-[url(/src/assets/obsp3-img.png)] bg-no-repeat'
             }),
             El({
                 element: 'div',
@@ -47,7 +47,7 @@ export function onbordPage3(){
                         eventListener: [
                             {
                                 event: 'click',
-                                
+                                callback: goToNextPage
                             }
                         ],
                         children: [

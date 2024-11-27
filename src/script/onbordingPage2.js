@@ -9,7 +9,7 @@ export function onbordPage2(){
         children: [
             El({
                 element: 'div',
-                className: 'top-img w-[428px] h-[602px] bg-[url(/src/assets/obsp1-img2.png)] bg-no-repeat'
+                className: 'top-img w-[428px] h-[602px] bg-[url(/src/assets/obsp2-img.png)] bg-no-repeat'
             }),
             El({
                 element: 'div',
