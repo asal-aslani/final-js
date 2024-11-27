@@ -1,5 +1,5 @@
 import {El} from "./el.js";
-
+import { router } from "./router.js";
 
 export function loginPage(){
     return El({
@@ -149,7 +149,7 @@ export function loginPage(){
 }
 
 function highlight(element){
-    console.log('hi')
+    
 
     element.parentElement.classList.add('outline');
 
@@ -165,38 +165,41 @@ function highlight(element){
 
 function clearHighlight(element){
 
-    let lowImg;
-    let highImg;
-    let lowEye;
-    let highEye;
+    let grayIcon;
+    let blackIcon;
+    let grayEye;
+    let blackEye;
 
     if(element.classList.contains('email-input')){
-        lowImg = 'email-prefix.svg';
-        highImg = 'envelope-fill.svg';
+        grayIcon = 'email-prefix.svg';
+        blackIcon = 'envelope-fill.svg';
     }
     else{
-        lowImg = 'password-prefix.svg';
-        highImg = 'lock-fill.svg';
-        lowEye = 'eye-slash.svg';
-        highEye = 'eye-slash-fill.svg';
+        grayIcon = 'password-prefix.svg';
+        blackIcon = 'lock-fill.svg';
+        grayEye = 'eye-slash.svg';
+        blackEye = 'eye-slash-fill.svg';
     }
 
     if(element.value.length > 0){
-        element.parentElement.children[0].src = `/src/assets/${highImg}`;
+        element.parentElement.children[0].src = `/src/assets/${blackIcon}`;
 
         if(element.parentElement.children[2]){
-            element.parentElement.children[2].src = `/src/assets/${highEye}`;
+            element.parentElement.children[2].src = `/src/assets/${blackEye}`;
         }
     }
     else{
-        element.parentElement.children[0].src = `/src/assets/${lowImg}`;
+        element.parentElement.children[0].src = `/src/assets/${grayIcon}`;
 
         if(element.parentElement.children[2]){
-            element.parentElement.children[2].src = `/src/assets/${lowEye}`;
+            element.parentElement.children[2].src = `/src/assets/${grayEye}`;
         }
     }
 
 
     element.parentElement.classList.remove('outline');
+}
+function goToNextPage(){
+    router.navigate('/home')
 }
 
