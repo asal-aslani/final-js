@@ -1,57 +1,69 @@
+import { router } from "./router.js";
 import {El} from "./el.js";
-import logo from '../assets/logo.svg';
 
-let myvar;
-
-export function startUpPage(){
+export function onbordPage1(){
 
     return El({
         element: 'div',
-        className: 'header w-full h-full flex flex-col',
-        eventListener: [
-            {
-                event: 'load',
-                callback: ()=>{showPage()}
-            }
-        ],
+        className: 'container w-[428px] h-[926px] flex flex-col bg-red-600',
         children: [
             El({
                 element: 'div',
-                className: 'logo-container w-[231px] h-[63px] flex flex-row mt-[392px] mx-[98px] justify-between',
+                className: 'top-img w-[428px] h-[602px] bg-[url(/src/assets/obsp1-img2.png)] bg-no-repeat'
+            }),
+            El({
+                element: 'div',
+                className: 'bottom-content w-[428px] h-[324px] flex flex-col bg-white',
                 children: [
                     El({
+                        element: 'h1',
+                        className: 'description-text w-[380px] text-center font-semibold text-[32px] mx-auto mt-[32px] h-100px leading-[38px]',
+                        children: 'We provide high quality products just for you'
+                    }),
+                    El({
                         element: 'div',
-                        className: 'logo-background bg-black rounded-full w-[59px] h-[59px] pt-2 animate-bounce',
+                        className: 'w-[102px] h-[23px] flex flex-row mx-auto justify-between mt-[59px]',
                         children: [
                             El({
                                 element: 'img',
-                                className: 'w-[26.54px] h-[39.93px] m-auto',
-                                src: logo
+                                className: 'first-line',
+                                src: '/src/assets/active-line.svg'
+                            }),
+                            El({
+                                element: 'img',
+                                className: 'first-line',
+                                src: '/src/assets/deactive-line.svg'
+                            }),
+                            El({
+                                element: 'img',
+                                className: 'first-line',
+                                src: '/src/assets/deactive-line.svg'
                             })
                         ]
                     }),
                     El({
-                        element: 'h1',
-                        className: 'logo-text font-bold text-[52px] mt-[-10px] mr-2',
-                        children: 'Shoea'
-                    })
-                ]
-            }),
-            El({
-                element: 'div',
-                className: 'loading-container w-[48px] h-[48px] mt-[306px] mx-[190px] animate-spin',
-                children: [
-                    El({
-                        element: 'img',
-                        className: 'loading-img w-[48px] h-[48px]',
-                        src: '/src/assets/spinner-atom.svg'
+                        element: 'button',
+                        className: 'w-[380px] h-[45px] bg-slate-800 rounded-3xl mx-auto text-center mt-[40px]',
+                        eventListener: [
+                            {
+                                event: 'click',
+                                callback: goToNextPage
+                            }
+                        ],
+                        children: [
+                            El({
+                                element: 'p',
+                                className: 'text-white text-[14px] font-medium',
+                                children: 'Next'
+                            })
+                        ]
                     })
                 ]
             })
         ]
     })
-};
+}
 
-
-
-showPage()
+function goToNextPage(){
+    router.navigate('/obp2')
+}

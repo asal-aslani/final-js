@@ -1,5 +1,5 @@
 import {El} from "./el.js";
-
+import { router } from "./router.js";
 
 export function welcomePage(){
 
@@ -40,3 +40,6 @@ export function welcomePage(){
         ]
     })
 }
+setTimeout(() => {
+    router.navigate('/obp1')
+}, 10000);

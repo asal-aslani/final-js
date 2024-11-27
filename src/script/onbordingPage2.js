@@ -1,6 +1,7 @@
 import {El} from "./el.js";
+import { router } from "./router.js";
 
-export function obsPage1(){
+export function onbordPage2(){
 
     return El({
         element: 'div',
@@ -62,4 +63,6 @@ export function obsPage1(){
         ]
     })
 }
-
+function goToNextPage(){
+    router.navigate('/obp3')
+}

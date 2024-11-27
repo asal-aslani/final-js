@@ -1,5 +1,7 @@
 import { El } from "./el"
-export function obsPage2(){
+import { router } from "./router.js";
+
+export function onbordPage3(){
 
     return El({
         element: 'div',
@@ -45,7 +47,7 @@ export function obsPage2(){
                         eventListener: [
                             {
                                 event: 'click',
-                                callback: goToNextPage
+                                
                             }
                         ],
                         children: [
@@ -60,4 +62,8 @@ export function obsPage2(){
             })
         ]
     })
+}
+
+function goToNextPage(){
+    router.navigate('/login')
 }
